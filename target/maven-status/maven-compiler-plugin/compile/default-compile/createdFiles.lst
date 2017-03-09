@@ -1,3 +1,3 @@
-com\it355\petrababic\PetrinController.class
-com\it355\model\Ponuda.class
-com\it355\model\Student.class
+com\it355\service\Ponuda.class
+com\it355\service\PonudeServiceImpl.class
+com\it355\service\PonudeService.class

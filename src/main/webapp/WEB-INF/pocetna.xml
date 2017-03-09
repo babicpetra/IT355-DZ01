@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow xmlns="http://www.springframework.org/schema/webflow"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.springframework.org/schema/webflow
+http://www.springframework.org/schema/webflow/spring-webflow-2.4.xsd">
+    <var name="ponuda"
+         class="com.it355.service.Ponuda" />
+    <view-state id="displayFirstPage" view="jsp/upis-ponude.jsp"
+             model="ponuda"  >
+        <transition on="performAdd" to="performAddAction" />
+    </view-state>
+    
+    <view-state id="performAddAction" view="jsp/ponude.jsp">
+    </view-state>
+</flow>

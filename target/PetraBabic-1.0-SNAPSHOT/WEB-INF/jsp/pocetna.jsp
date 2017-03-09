@@ -9,8 +9,8 @@
     <!-- Portfolio Item Heading -->
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header">Portfolio Item
-                <small>Item Subheading</small>
+            <h1 class="page-header">Početna strana
+
             </h1>
         </div>
     </div>
@@ -20,12 +20,12 @@
     <div class="row">
 
         <div class="col-md-8">
-            <img class="img-responsive" src="http://placehold.it/750x500" alt="">
+            <img class="img-responsive" src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Hazelnuts.jpg" alt="">
         </div>
 
         <div class="col-md-4">
-            <h3>Project Description</h3>
-            <h1> ${message}</h1>
+            <h3>O nama</h3>
+            <h1> Poruka</h1>
             <sec:authorize access="hasRole('ROLE_USER')">
                 <c:url value="/j_spring_security_logout" var="logoutUrl" />
                 <form action="${logoutUrl}" method="post" id="logoutForm">
@@ -43,10 +43,14 @@
                 </c:if>
             </sec:authorize>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae. Sed dui lorem, adipiscing in adipiscing et, interdum nec metus. Mauris ultricies, justo eu convallis placerat, felis enim.</p>
-            <h3>Project Details</h3>
+            <h3>Na sajtu možete pogledati</h3>
             <ul>
-                <li>Lorem Ipsum</li>
-                <li>Dolor Sit Amet</li>
+                <li><a href="${flowExecutionUrl}&_eventId=prikaziPonude">Ponude</a>
+                    
+                </li>
+                <li><a href="${flowExecutionUrl}&_eventId=prikaziPotraznje">Potražnje</a>
+                    
+                </li>
                 <li>Consectetur</li>
                 <li>Adipiscing Elit</li>
             </ul>
