@@ -6,10 +6,10 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
- <div class="content-foot">
-                    <div class="footer">
-                        <p>Copyright &copy; Your Website 2014</p>
-                    </div>
+<div class="container">
+                <div class="copy-rights">
+                    Copyright(c) - Berza Lešnika 
                 </div>
+            </div>
           
    
