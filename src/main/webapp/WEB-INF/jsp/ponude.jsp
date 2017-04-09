@@ -1,3 +1,4 @@
+
 <%@ taglib prefix="t" tagdir="/WEB-INF/tags"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
@@ -36,18 +37,18 @@
                             <td>${ponuda.kolicina}</td>
                             <td>${ponuda.tip}</td>
                             <td>${ponuda.username}</td>
-                            
-                             <c:if test="${username == ponuda.username}">
-                                 <c:if test="${pageContext.request.isUserInRole('ROLE_USER')}">
-                            <td><a href="<c:url value='/editPonuda/${ponuda.id}' />">Izmeni</a></td>
-                            <td><a href="<c:url value='/deletePonuda/${ponuda.id}' />">Obriši</a></td>
-                                 </c:if>
+
+                            <c:if test="${username == ponuda.username}">
+                                <c:if test="${pageContext.request.isUserInRole('ROLE_USER')}">
+                                    <td><a href="<c:url value='/editPonuda/${ponuda.id}' />">Izmeni</a></td>
+                                    <td><a href="<c:url value='/deletePonuda/${ponuda.id}' />">Obriši</a></td>
+                                </c:if>
                             </c:if>
-                            
-                            
+
+
                             <c:if test="${pageContext.request.isUserInRole('ROLE_ADMIN')}">
-                            <td><a href="<c:url value='/editPonuda/${ponuda.id}' />">Izmeni</a></td>
-                            <td><a href="<c:url value='/deletePonuda/${ponuda.id}' />">Obriši</a></td>
+                                <td><a href="<c:url value='/editPonuda/${ponuda.id}' />">Izmeni</a></td>
+                                <td><a href="<c:url value='/deletePonuda/${ponuda.id}' />">Obriši</a></td>
                             </c:if>
                         </tr>
                     </c:forEach>

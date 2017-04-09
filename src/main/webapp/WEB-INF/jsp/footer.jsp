@@ -6,10 +6,11 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+
 <div class="container">
                 <div class="copy-rights">
                     Copyright(c) - Berza Lešnika 
                 </div>
             </div>
-          
+
    

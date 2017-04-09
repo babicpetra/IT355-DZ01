@@ -1,10 +1,9 @@
 com\it355\petrababic\dao\impl\PonudaDaoImpl.class
-com\it355\petrababic\mapper\PonudaMapper.class
+com\it355\petrababic\restController\CRUDController.class
+com\it355\petrababic\dao\PonudaDao.class
+com\it355\petrababic\entity\User.class
 com\it355\petrababic\entity\Ponuda.class
 com\it355\petrababic\entity\Potraznja.class
 com\it355\petrababic\converter\IntegerToTip.class
-com\it355\petrababic\restController\CRUDController.class
-com\it355\petrababic\dao\PonudaDao.class
 com\it355\petrababic\entity\TipLesnika.class
-com\it355\petrababic\entity\User.class
 com\it355\petrababic\restController\MyController.class

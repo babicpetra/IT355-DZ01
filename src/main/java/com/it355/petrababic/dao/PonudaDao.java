@@ -32,5 +32,6 @@ public interface PonudaDao {
     public void deleteUser(User user);
     public List<User> getAllUsers();
     public User getUserById(int id);
-    
+   
+
 }

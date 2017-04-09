@@ -1,3 +1,4 @@
+
 <%@ taglib prefix="t" tagdir="/WEB-INF/tags"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
@@ -34,8 +35,17 @@
                             <td>${potraznja.brTel}</td>
                             <td>${potraznja.cena}</td>
                             <td>${potraznja.kolicina}</td>
+                            <td>${potraznja.tip}</td>
                             <td>${potraznja.username}</td>
-                            <td>${username}</td>
+                            
+                            
+                             <c:if test="${username == potraznja.username}">
+                                <c:if test="${pageContext.request.isUserInRole('ROLE_USER')}">
+                                    <td><a href="<c:url value='/editPotraznja/${potraznja.id}' />">Izmeni</a></td>
+                                    <td><a href="<c:url value='/deletePotraznja/${potraznja.id}' />">Obriši</a></td>
+                                </c:if>
+                            </c:if>
+                            
                             <c:if test="${pageContext.request.isUserInRole('ROLE_ADMIN')}" >
                             <td><a href="<c:url value='/editPotraznja/${potraznja.id}' />">Izmeni</a></td>
                             <td><a href="<c:url value='/deletePotraznja/${potraznja.id}' />">Obriši</a></td>

@@ -29,9 +29,15 @@
 
             <div class="logo">
 
-                <h2 class="carousel-title">Registruj se</h2>
+                <c:if test="${pageContext.request.isUserInRole('ROLE_ADMIN')}" >
+                                    <h2 class="carousel-title">Unesite podatke o novom administratoru</h2>
+                       </c:if>
+                <c:if test="${!pageContext.request.isUserInRole('ROLE_ADMIN')}" >
+                                      <h2 class="carousel-title">Registruj se</h2>
                 <p>Nemaš nalog? <br/> Registracija je besplatna!
                 </p>
+                       </c:if>
+              
 
                 <div class="form">
 
@@ -41,15 +47,12 @@
 
 
                         <form:form modelAttribute="regi" method="POST" >
-                            <c:if test="${pageContext.request.isUserInRole('ROLE_USER')}" >
+                           
                                 <% String success = (String) request.getAttribute("successMsg");%>
                                 <%= (success != null) ? "<div class=\"alert alert-success\">" + success + "</div>" : ""%>
-                            </c:if>
+                          
 
-                            <c:if test="${pageContext.request.isUserInRole('ROLE_ADMIN')}" >
-                                <% String success1 = (String) request.getAttribute("successMsgAdmin");%>
-                                <%= (success1 != null) ? "<div class=\"alert alert-success\">" + success1 + "</div>" : ""%>
-                            </c:if>
+                            
 
 
                             <div class="top-row">
@@ -105,7 +108,7 @@
                                 <c:if test="${pageContext.request.isUserInRole('ROLE_ADMIN')}" >
                                     <form:input path="role"  id="role" value="ROLE_ADMIN" type="hidden" />
                                 </c:if>
-                                <c:if test="${pageContext.request.isUserInRole('ROLE_USER')}" >
+                                <c:if test="${!pageContext.request.isUserInRole('ROLE_USER')}" >
                                     <form:input path="role"  id="role" value="ROLE_USER" type="hidden" />
                                 </c:if>
                             </div>

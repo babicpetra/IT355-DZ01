@@ -14,8 +14,6 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.util.Arrays;
 import java.util.List;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
@@ -193,6 +191,11 @@ public class CRUDController {
 
     @RequestMapping(value = "/potraznje", method = RequestMethod.GET)
     public ModelAndView getPotraznje(ModelAndView model) {
+         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        if (!(auth instanceof AnonymousAuthenticationToken)) {
+            UserDetails userDetail = (UserDetails) auth.getPrincipal();
+            model.addObject("username", userDetail.getUsername());
+        }
         model.addObject("potraznje", ponudaDao.getAllPotraznje());
         model.addObject("potraznja", new Potraznja());
         return model;
